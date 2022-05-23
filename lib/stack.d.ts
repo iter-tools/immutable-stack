@@ -39,6 +39,12 @@ declare class ImmutableStackFrame<T> {
   push<V>(...values: Array<V>): ImmutableStackFrame<T | V>;
 
   /**
+   * Returns a new stack without its top value.
+   * emptyStack.pop === emptyStack
+   */
+  pop(): ImmutableStackFrame<T>;
+
+  /**
    * Returns a new stack with the values in `iterable` on top.
    */
   concat<V>(iterable: Iterable<V>): ImmutableStackFrame<T | V>;
