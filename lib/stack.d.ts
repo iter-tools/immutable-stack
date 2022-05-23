@@ -45,6 +45,12 @@ declare class ImmutableStackFrame<T> {
   pop(): ImmutableStackFrame<T>;
 
   /**
+   * Returns a new stack with the specified `values` in place
+   * of the previous top values.
+   */
+  replace<V>(...values: Array<V>): ImmutableStackFrame<T | V>;
+
+  /**
    * Returns a new stack with the values in `iterable` on top.
    */
   concat<V>(iterable: Iterable<V>): ImmutableStackFrame<T | V>;
