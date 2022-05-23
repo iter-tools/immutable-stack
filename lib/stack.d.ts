@@ -45,6 +45,11 @@ declare class ImmutableStackFrame<T> {
   pop(): ImmutableStackFrame<T>;
 
   /**
+   * Returns this.value
+   */
+  peek(): T;
+
+  /**
    * Returns a new stack with the specified `values` in place
    * of the previous top values.
    */

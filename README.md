@@ -13,10 +13,12 @@ import emptyStack from '@iter-tools/immutable-stack'; // OR
 const emptyStack = require('@iter-tools/immutable-stack');
 
 const stack = emptyStack.push('Hello', 'world');
-stack.value; // 'world'
 stack.size; // 2
-stack.pop().pop() // emptyStack
-[...stack] // ['Hello', 'world']
+stack.size; // 'world'
+stack.peek(); // 'world'
+stack.pop().peek(); // 'Hello'
+stack.pop().pop(); // emptyStack
+[...stack]; // ['Hello', 'world']
 ```
 
 Access to the underlying `ImmutableStackFrame` class is not required for ordiary usage, but can be achieved easily:
@@ -75,6 +77,11 @@ declare class ImmutableStackFrame<T> {
    * emptyStack.pop === emptyStack
    */
   pop(): ImmutableStackFrame<T>;
+
+  /**
+   * Returns this.value
+   */
+  peek(): T;
 
   /**
    * Returns a new stack with the specified `values` in place
