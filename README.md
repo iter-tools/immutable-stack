@@ -1,7 +1,6 @@
 # @iter-tools/imm-stack
 
-[![Build Status](https://travis-ci.org/iter-tools/immutable-stack.svg?branch=trunk)](https://travis-ci.org/iter-tools/immutable-stack)
-[![codecov](https://codecov.io/gh/iter-tools/immutable-stack/branch/trunk/graph/badge.svg)](https://codecov.io/gh/iter-tools/immutable-stack)
+[![npm](https://img.shields.io/npm/v/@iter-tools/imm-stack)](https://www.npmjs.com/package/@iter-tools/imm-stack)
 
 A simple singly-linked immutable stack data structure. A stack is composed of immutable stack frames, each of which supports the full stack API.
 
@@ -16,7 +15,7 @@ const emptyStack = require('@iter-tools/immutable-stack');
 const stack = emptyStack.push('Hello', 'world');
 stack.value; // 'world'
 stack.size; // 2
-stack.prev.prev // emptyStack
+stack.pop().pop() // emptyStack
 [...stack] // ['Hello', 'world']
 ```
 
