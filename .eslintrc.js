@@ -5,6 +5,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  rules: {
+    'no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
+  },
   overrides: [
     {
       files: ['**/__tests__/**'],
