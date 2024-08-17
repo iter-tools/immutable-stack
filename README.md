@@ -14,7 +14,7 @@ const emptyStack = require('@iter-tools/immutable-stack');
 
 const stack = emptyStack.push('Hello', 'world');
 stack.size; // 2
-stack.size; // 'world'
+stack.value; // 'world'
 stack.peek(); // 'world'
 stack.pop().peek(); // 'Hello'
 stack.pop().pop(); // emptyStack
